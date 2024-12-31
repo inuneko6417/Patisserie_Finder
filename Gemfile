@@ -18,14 +18,16 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem 'rails-i18n'
-gem 'devise'
-gem 'bootstrap', '~> 5.3.0'
-gem 'autoprefixer-rails'
-gem 'sassc-rails'
-gem 'ransack'
-gem 'kaminari'
-gem 'image_processing'
+gem "rails-i18n"
+gem "devise"
+gem "bootstrap", "~> 5.3.0"
+gem "autoprefixer-rails"
+gem "sassc-rails"
+gem "ransack"
+gem "kaminari"
+gem "image_processing"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -49,7 +51,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
+  gem "brakeman", "~> 7.0.0", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
