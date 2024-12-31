@@ -1,0 +1,5 @@
+ja:
+  hello: "こんにちは"
+  errors:
+    messages:
+      record_invalid: "バリデーションエラーです"
