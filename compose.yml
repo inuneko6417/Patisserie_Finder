@@ -5,6 +5,7 @@ services:
     environment:
       TZ: Asia/Tokyo
       POSTGRES_PASSWORD: password
+      SECRET_KEY_BASE: e5353cfe2ae5c130
     volumes:
       - postgresql_data:/var/lib/postgresql
     ports:
