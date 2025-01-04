@@ -362,6 +362,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt (~> 3.1.7)
   bootsnap
   bootstrap (~> 5.3.0)
   brakeman (~> 7.0.0)
