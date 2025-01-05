@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: <%= ENV["DATABASE_URL"] %>
-  username: myapp
+  username: patisserie_finder_user
   password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
