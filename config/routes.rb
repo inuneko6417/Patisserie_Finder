@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get "sessions/new"
   get "pages/home"
   root "pages#home"
-  get "/signup", to: "users#new"
-  post "/users", to: "users#create"
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  resources :users, only: [:new, :create] # ユーザー登録に必要なルートのみ追加
+  get 'signup', to: 'users#new', as: :signup # 新規登録ページ用のカスタムルート
+  get 'login', to: 'sessions#new'  # ログインページ（後で実装）
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
+
 
 
   get "up" => "rails/health#show", as: :rails_health_check

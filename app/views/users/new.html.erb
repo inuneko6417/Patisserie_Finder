@@ -1,38 +1,44 @@
-<h1>ユーザー登録</h1>
+<div class="flex items-center justify-center min-h-screen bg-gray-50">
+  <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="mb-6 text-2xl font-semibold text-center text-gray-800">ユーザー登録</h1>
+    <% if @user.errors.any? %>
+      <div class="bg-red-100 text-red-700 p-4 rounded">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form_with model: @user, local: true, class: "space-y-6" do |f| %>
+      <!-- 名前入力 -->
+      <div>
+        <%= f.label :name, "名前", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_field :name, class: "block w-full px-4 py-2 mt-1 text-gray-900 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
 
-<%= form_with(model: @user, url: users_path, local: true) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> が発生しました:</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <!-- メールアドレス入力 -->
+      <div>
+        <%= f.label :email, "メールアドレス", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.email_field :email, class: "block w-full px-4 py-2 mt-1 text-gray-900 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
 
-  <div>
-    <%= form.label :name, "名前" %>
-    <%= form.text_field :name, required: true %>
+      <!-- パスワード入力 -->
+      <div>
+        <%= f.label :password, "パスワード", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.password_field :password, class: "block w-full px-4 py-2 mt-1 text-gray-900 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <!-- パスワード確認入力 -->
+      <div>
+        <%= f.label :password_confirmation, "パスワード確認", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.password_field :password_confirmation, class: "block w-full px-4 py-2 mt-1 text-gray-900 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <!-- 登録ボタン -->
+      <div>
+        <%= f.submit "登録", class: "w-full px-6 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm" %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= form.label :email, "メールアドレス" %>
-    <%= form.email_field :email, required: true %>
-  </div>
-
-  <div>
-    <%= form.label :password, "パスワード" %>
-    <%= form.password_field :password, required: true %>
-  </div>
-
-  <div>
-    <%= form.label :password_confirmation, "パスワード（確認）" %>
-    <%= form.password_field :password_confirmation, required: true %>
-  </div>
-
-  <div>
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
+</div>
