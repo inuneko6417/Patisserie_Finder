@@ -1,2 +1,6 @@
 @import "inter-font";
 @import "@fontsource/inter";
+/*
+ *= require_self
+ *= require_tree .
+*/
