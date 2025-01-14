@@ -1,7 +1,2 @@
 @import "inter-font";
 @import "@fontsource/inter";
-@import "tailwindcss";
-/*
- *= require_self
- *= require_tree .
-*/
