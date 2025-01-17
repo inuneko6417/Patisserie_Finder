@@ -1,25 +1,28 @@
 
 <!DOCTYPE html>
 <html lang="ja">
-<% if flash[:success] %>
-  <div class="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
-    <%= flash[:success] %>
-  </div>
-<% elsif flash[:error] %>
-  <div class="p-4 mb-4 text-red-800 bg-red-200 rounded-lg">
-    <%= flash[:error] %>
-  </div>
-<% end %>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ユーザー登録</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-</head>
-<body class="bg-gray-50">
-  <%= yield %>
-</body>
+  <% if flash[:success] %>
+    <div class="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
+      <%= flash[:success] %>
+    </div>
+  <% elsif flash[:error] %>
+    <div class="p-4 mb-4 text-red-800 bg-red-200 rounded-lg">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー登録</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+  <body>
+    <% unless current_page?(root_path) %>
+      <%= render 'shared/header' %>
+    <% end %>
+    <%= yield %>
+  </body>
 </html>

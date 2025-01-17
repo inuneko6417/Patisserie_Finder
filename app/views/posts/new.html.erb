@@ -1,0 +1,15 @@
+<h1 class="text-2xl font-bold text-center my-4">新しい投稿を作成</h1>
+
+<div class="container mx-auto px-4">
+  <%= simple_form_for @post, html: { class: "bg-white p-6 rounded shadow" } do |f| %>
+    <div class="mb-4">
+      <%= f.input :title, label: "タイトル", input_html: { class: "border border-gray-300 rounded p-2 w-full" } %>
+    </div>
+    <div class="mb-4">
+      <%= f.input :body, label: "内容", as: :text, input_html: { class: "border border-gray-300 rounded p-2 w-full h-40" } %>
+    </div>
+    <div>
+      <%= f.button :submit, "投稿する", class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
+    </div>
+  <% end %>
+</div>
