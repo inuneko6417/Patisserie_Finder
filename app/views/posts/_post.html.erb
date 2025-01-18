@@ -1,0 +1,33 @@
+<div class="col-span-12 lg:col-span-1 mb-3">
+  <div id="post-id-<%= post.id %>">
+    <div class="card border border-gray-200 shadow-sm">
+      <%= image_tag "post_placeholder.png", class: "w-full h-48 object-cover", width: "300", height:"200" %>
+      <div class="p-4">
+        <div class="flex items-center">
+          <h4 class="text-lg font-semibold">
+            <%= link_to post.title, '#', class: "text-blue-600 hover:underline" %>
+          </h4>
+          <div class="ml-auto flex space-x-2">
+            <%= link_to '#', id: "button-edit-#{post.id}", class: "text-gray-500 hover:text-blue-600" do %>
+              <i class="bi bi-pencil-fill"></i>
+            <% end %>
+            <%= link_to '#', id: "button-delete-#{post.id}", method: :delete, data: {confirm: ''}, class: "text-gray-500 hover:text-red-600" do %>
+              <i class="bi bi-trash-fill"></i>
+            <% end %>
+          </div>
+        </div>
+        <ul class="text-sm text-gray-500 mt-2 space-y-1">
+          <li class="flex items-center space-x-1">
+            <i class="bi bi-person"></i>
+            <span><%= post.user.name %></span>
+          </li>
+          <li class="flex items-center space-x-1">
+            <i class="bi bi-calendar"></i>
+            <span><%= l post.created_at, format: :short %></span>
+          </li>
+        </ul>
+        <p class="mt-4 text-gray-700">本文</p>
+      </div>
+    </div>
+  </div>
+</div>
