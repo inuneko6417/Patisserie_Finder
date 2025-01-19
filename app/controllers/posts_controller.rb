@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    @post = Post.find(params[:id]) # 単一の投稿を取得
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
