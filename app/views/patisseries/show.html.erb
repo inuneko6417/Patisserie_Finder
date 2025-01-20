@@ -1,0 +1,43 @@
+<div class="bg-gray-100 py-10">
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <!-- ランク & 店名 -->
+    <div class="bg-blue-500 text-white text-center py-4">
+      <h1 class="text-2xl font-bold"><%= @patisserie[:name] %></h1>
+    </div>
+
+    <!-- 画像スライダー（ダミー） -->
+    <div class="h-60 bg-gray-300 flex items-center justify-center">
+      <p class="text-gray-500">複数枚の店舗の写真</p>
+    </div>
+
+    <!-- 店舗情報 -->
+    <div class="p-6">
+      <h2 class="text-xl font-bold mb-4">店舗情報</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li><strong>住所:</strong> <%= @patisserie[:address] %></li>
+        <li><strong>最寄駅:</strong> <%= @patisserie[:nearest_station] %></li>
+        <li><strong>イートイン:</strong> <%= @patisserie[:eat_in] ? 'あり' : 'なし' %></li>
+        <li><strong>テイクアウト:</strong> <%= @patisserie[:takeout] ? 'あり' : 'なし' %></li>
+        <li><strong>営業時間:</strong> <%= @patisserie[:business_hours] %></li>
+        <li><strong>定休日:</strong> <%= @patisserie[:closed_on] %></li>
+        <li><strong>電話番号:</strong> <%= @patisserie[:phone_number] %></li>
+        <li><strong>Web & SNS:</strong> <a href="<%= @patisserie[:web_and_sns] %>" class="text-blue-500 hover:underline"><%= @patisserie[:web_and_sns] %></a></li>
+      </ul>
+    </div>
+
+    <!-- コメントセクション -->
+    <div class="p-6 border-t">
+      <h2 class="text-xl font-bold mb-4">コメント</h2>
+      <% @patisserie[:comments].each do |comment| %>
+        <div class="flex items-start space-x-4 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+          <div>
+            <p class="text-sm font-semibold"><%= comment[:user] %></p>
+            <p class="text-gray-600"><%= comment[:text] %></p>
+            <p class="text-xs text-gray-500"><%= comment[:time] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
