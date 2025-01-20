@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get "sessions/new"
   root "pages#home"
   resources :users, only: [ :new, :create ] # ユーザー登録に必要なルートのみ追加
   resources :posts, only: [ :index, :show, :new, :create ]
+  resources :patisseries, only: [ :index, :show ]
+
   get "signup", to: "users#new", as: :signup # 新規登録ページ用のカスタムルート
   get "login", to: "sessions#new" # ログインページ（後で実装）
   post "login", to: "sessions#create"

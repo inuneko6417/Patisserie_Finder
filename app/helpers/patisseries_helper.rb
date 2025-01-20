@@ -1,0 +1,2 @@
+module PatisseriesHelper
+end
