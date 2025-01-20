@@ -237,16 +237,14 @@ Figma：https://www.figma.com/design/kMfMUm05r6O9fNpAqq9QCk/%E7%84%A1%E9%A1%8C?n
 ■ProjectsのURL
 https://github.com/users/inuneko6417/projects/1/views/2?sumFields=%5B156244715%5D&hideItemsCount=false
 ■MVPリリースまで
-- [ ] rails new
-- [ ] Herokuにデプロイ
-- [ ] トップページ
-- [ ] ユーザー登録機能
-- [ ] ログイン機能
-- [ ] 投稿機能
-- [ ] AIによるコメント機能
+- [x] rails new
+- [x] Herokuにデプロイ
+- [x] トップページ
+- [x] ユーザー登録機能
+- [x] ログイン機能
+- [x] 投稿機能
 
 ■MVP後
-- [ ] GoogleMap
 - [ ] オートコンプリート検索昨日
 - [ ] SNSログイン（Googleログイン）
 - [ ] LINE通知
@@ -265,3 +263,20 @@ https://github.com/users/inuneko6417/projects/1/views/2?sumFields=%5B156244715%5
 
 ■MVPレビュー依頼予定日
 予定日：2025年 ２月
+
+
+## 各種情報
+サービスの概要とMVPで検証する事柄：
+サービス名：Patisserie_Finder
+サービスURL：https://patisserie-finder-1.onrender.com
+
+READMEレビュー時に実装予定だった機能が実装できているかがわかるように記載してください。
+- [x] rails new
+- [x] Herokuにデプロイ
+- [x] トップページ
+- [x] ユーザー登録機能
+- [x] ログイン機能
+- [x] 投稿機能
+## サービスイメージがわかるようなスクリーンショット等
+
+![alt text](<スクリーンショット 2025-01-20 18.03.42.png>)
