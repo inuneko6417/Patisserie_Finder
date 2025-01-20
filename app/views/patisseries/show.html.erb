@@ -25,6 +25,21 @@
       </ul>
     </div>
 
+    <!-- Googleマップ -->
+    <div class="mt-6">
+      <h2 class="text-xl font-bold mb-4">Googleマップ</h2>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=<%= CGI.escape(@patisserie[:address]) %>"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
     <!-- コメントセクション -->
     <div class="p-6 border-t">
       <h2 class="text-xl font-bold mb-4">コメント</h2>
