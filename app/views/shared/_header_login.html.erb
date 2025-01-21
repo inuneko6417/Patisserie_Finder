@@ -1,0 +1,69 @@
+<header>
+  <nav class="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <!-- ロゴ -->
+      <%= link_to '/', class: "flex items-center" do %>
+        <%= image_tag 'logo.png', alt: "Logo", class: "h-10" %>
+        <span class="ml-3 text-2xl font-bold tracking-wide">Patisserie Finder</span>
+      <% end %>
+
+      <!-- ハンバーガーメニュー -->
+      <button
+        class="lg:hidden text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        id="navbar-toggler"
+      >
+        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- ナビゲーションメニュー -->
+      <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navbar-menu">
+        <ul class="flex flex-col lg:flex-row lg:space-x-8 space-y-3 lg:space-y-0">
+          <!-- 掲示板メニュー -->
+          <li class="relative group">
+            <%= link_to '掲示板⬇︎', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "board-link" %>
+            <!-- ドロップダウンメニュー -->
+            <ul id="board-dropdown" class="absolute left-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
+              <!-- 掲示板一覧 -->
+              <li>
+                <%= link_to 'ランキング一覧', patisseries_index_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+              </li>
+            </ul>
+          </li>
+
+          <!-- ログインメニュー -->
+          <li class="relative group">
+            <%= link_to 'ログイン⬇︎', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "login-link" %>
+            <!-- ドロップダウンメニュー -->
+            <ul id="login-dropdown" class="absolute left-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
+              <li>
+                <%= link_to 'ログイン', login_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+              </li>
+              <li>
+                <%= link_to '新規登録', signup_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- スクリプト: ハンバーガーメニューとドロップダウンメニューの開閉 -->
+  <script>
+    // ログインメニューの開閉
+    document.getElementById('login-link').addEventListener('click', function(event) {
+      event.preventDefault(); // ページ遷移を防ぐ
+      const dropdown = document.getElementById('login-dropdown');
+      dropdown.classList.toggle('hidden'); // ドロップダウンメニューを表示/非表示
+    });
+
+    // 掲示板メニューの開閉
+    document.getElementById('board-link').addEventListener('click', function(event) {
+      event.preventDefault(); // ページ遷移を防ぐ
+      const dropdown = document.getElementById('board-dropdown');
+      dropdown.classList.toggle('hidden'); // ドロップダウンメニューを表示/非表示
+    });
+  </script>
+</header>

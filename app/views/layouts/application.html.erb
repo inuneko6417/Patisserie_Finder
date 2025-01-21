@@ -20,8 +20,10 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
   <body>
-    <% unless current_page?(root_path) %>
+    <% if user_signed_in? %>
       <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/header_login' %>
     <% end %>
     <%= yield %>
   </body>
