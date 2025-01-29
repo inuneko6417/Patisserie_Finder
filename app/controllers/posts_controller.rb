@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
+
     if @post.save
       flash[:success] = "投稿が作成されました"
       redirect_to posts_path
@@ -29,6 +30,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image_url, :user_id)
+    params.require(:post).permit(:title, :body, :image_url_1, :image_url_2, :image_url_3, :user_id)
   end
 end

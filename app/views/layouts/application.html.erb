@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
   <% if flash[:success] %>
@@ -21,7 +20,11 @@
   </head>
   <body>
     <% unless current_page?(root_path) %>
-      <%= render 'shared/header' %>
+      <% if user_signed_in? %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/header_login' %>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>
