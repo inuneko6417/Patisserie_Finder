@@ -51,7 +51,7 @@ RSpec.describe Post, type: :model do
   #     create(:post, title: '古い投稿', created_at: 1.day.ago)
   #     create(:post, title: '新しい投稿', created_at: Time.current)
   #   end
-#
+  #
   #   it 'recentスコープが新しい順で並ぶこと' do
   #     expect(Post.recent.pluck(:title)).to eq ['新しい投稿', '古い投稿']
   #   end
