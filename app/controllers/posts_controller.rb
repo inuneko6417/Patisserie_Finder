@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id]) # 単一の投稿を取得
+    @images = @post.images
   end
 
   def create
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = "投稿が作成されました"
-      redirect_to posts_path
+      redirect_to @post
     else
       flash[:error] = "投稿の作成に失敗しました"
       render :new
@@ -30,6 +31,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image_url_1, :image_url_2, :image_url_3, :user_id)
+    params.require(:post).permit(:title, :body, :user_id, images: [])
   end
 end

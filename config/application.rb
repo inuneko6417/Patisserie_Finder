@@ -29,5 +29,11 @@ module Myapp
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml").to_s]
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
+    # Active Storage の URL オプションを設定
+    config.after_initialize do
+      ActiveStorage::Current.url_options = { host: 'http://localhost:3000' } # 本番環境では適宜変更
+    end
+    # mini_magickの追記
+    Rails.application.config.active_storage.variant_processor = :mini_magick
   end
 end

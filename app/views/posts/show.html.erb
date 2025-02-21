@@ -5,21 +5,30 @@
   </header>
 
   <!-- メイン画像 -->
-  <div class="mt-6">
-    <img id="main-image" src="<%= @post.image_url_1.attached? ? url_for(@post.image_url_1) : image_url('post_placeholder.png') %>" alt="メイン画像" class="w-full h-64 bg-gray-300 object-cover rounded" />
+  <div data-controller="gallery">
+    <div class="gallery02 swiper">
+      <div class="swiper-wrapper">
+        <% @post.images.each do |image| %>
+          <div class="swiper-slide">
+            <%= image_tag(image, alt: "投稿画像") %>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Swiper のボタンとページネーションを追加 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="gallery02-thumb">
+      <% @post.images.each_with_index do |image, index| %>
+        <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
+      <% end %>
+    </div>
   </div>
 
-  <!-- サムネイル画像一覧 -->
-  <div class="flex justify-between mt-4 space-x-4">
-    <% images = [@post.image_url_1, @post.image_url_2, @post.image_url_3] %>
-    <% images.each_with_index do |image, index| %>
-      <img
-        src="<%= image.attached? ? url_for(image) : image_url('post_placeholder.png') %>"
-        alt="サムネイル<%= index + 1 %>"
-        class="w-1/3 h-24 bg-gray-300 object-cover rounded cursor-pointer thumbnail"
-      />
-    <% end %>
-  </div>
+
 
   <!-- 本文 -->
   <div class="mt-6">

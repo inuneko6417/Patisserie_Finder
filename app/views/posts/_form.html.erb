@@ -1,5 +1,28 @@
-<!-- _form.html.erb -->
-<div>
-  <%= f.label :body, "本文", class: "block text-gray-700 font-semibold" %>
-  <%= f.text_area :body, rows: 6, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-yellow-500" %>
-</div>
+<%= form_with(model: @post, local: true, data: { controller: "gallery" }) do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :body, "本文" %>
+    <%= f.text_area :body, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :images, "画像" %>
+    <%= f.file_field :images, multiple: true, accept: "image/*", data: { action: "change->gallery#previewImages" } %>
+  </div>
+
+  <div class="gallery02 swiper">
+    <div class="swiper-wrapper">
+      <!-- JavaScriptで画像プレビューを追加 -->
+    </div>
+  </div>
+
+  <div class="gallery02-thumb">
+    <!-- JavaScriptでサムネイルを追加 -->
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>

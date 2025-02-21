@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   helper_method :user_signed_in?, :current_user
+  before_action :set_active_storage_url_options
 
   def user_signed_in?
     session[:user_id].present?
@@ -9,5 +10,11 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  private
+
+  def set_active_storage_url_options
+    ActiveStorage::Current.url_options = { host: request.base_url }
   end
 end
