@@ -4,5 +4,14 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import GalleryController from "./gallery_controller"
+application.register("gallery", GalleryController)
+
+import HeaderLoginController from "./header_login_controller"
+application.register("header_login", HeaderLoginController)
+
+import HeaderController from "./header_controller"
+application.register("header", HeaderController)
+
+import LoginController from "./login_controller"
+application.register("login", LoginController)

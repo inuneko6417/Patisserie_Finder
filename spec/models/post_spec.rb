@@ -23,6 +23,12 @@ RSpec.describe Post, type: :model do
       expect(post.errors[:title]).to include("は255文字以内で入力してください")
     end
 
+    it 'CI確認用' do
+      post.title = 'a' * 255
+      expect(post).not_to be_valid
+      expect(post.errors[:title]).to include("は255文字以内で入力してください")
+    end
+
     it '本文が1000文字以内であること' do
       post.body = 'a' * 1001
       expect(post).not_to be_valid

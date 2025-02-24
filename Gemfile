@@ -71,3 +71,5 @@ group :test do
 end
 
 # gem "tailwindcss-rails", "~> 3.1"
+
+gem "mini_magick", "~> 4.13"
