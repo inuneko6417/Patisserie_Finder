@@ -11,7 +11,7 @@ import HeaderLoginController from "./header_login_controller"
 application.register("header_login", HeaderLoginController)
 
 import HeaderController from "./header_controller"
-application.register("header", Controller)
+application.register("header", HeaderController)
 
 import LoginController from "./login_controller"
 application.register("login", LoginController)
