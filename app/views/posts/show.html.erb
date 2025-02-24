@@ -1,12 +1,13 @@
-<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6" do |f| %>
+<div data-controller="gallery">
   <!-- ヘッダー -->
-  <header class="bg-gray-800 text-white text-center py-4">
+  <div class="bg-gray-800 text-white text-center py-4">
     <h1 class="text-lg font-semibold"><%= @post.user.name %></h1>
-  </header>
+  </div>
 
   <!-- メイン画像 -->
-  <div data-controller="gallery">
-    <div class="gallery02 swiper">
+  <!-- <div data-controller="gallery">
+      <div class="gallery02 swiper"> -->
+    <div class="swiper">
       <div class="swiper-wrapper">
         <% @post.images.each do |image| %>
           <div class="swiper-slide">
@@ -15,18 +16,20 @@
         <% end %>
       </div>
 
-      <!-- Swiper のボタンとページネーションを追加 -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
-    </div>
-
-    <div class="gallery02-thumb">
-      <% @post.images.each_with_index do |image, index| %>
-        <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
-      <% end %>
-    </div>
+      <!-- Swiper のボタンとページネーションを追加 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
+      <!-- <div class="swiper-pagination"></div>
+      </div>
+      <div class="gallery02-thumb">
+        <% @post.images.each_with_index do |image, index| %>
+          <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
+        <% end %>
+      </div> -->
   </div>
+  <!-- </div> -->
 
 
 
@@ -64,4 +67,4 @@
       </div>
     </div>
   </section>
-<% end %>
+</div>
