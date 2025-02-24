@@ -10,8 +10,8 @@ application.register("gallery", GalleryController)
 import HeaderLoginController from "./header_login_controller"
 application.register("header_login", HeaderLoginController)
 
-import LoginController from "./header_controller"
-application.register("header", HeaderController)
+import HeaderController from "./header_controller"
+application.register("header", Controller)
 
 import LoginController from "./login_controller"
 application.register("login", LoginController)
