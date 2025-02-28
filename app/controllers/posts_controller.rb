@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id]) # 単一の投稿を取得
     @images = @post.images
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
   end
 
   def create

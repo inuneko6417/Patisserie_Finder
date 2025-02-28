@@ -1,70 +1,88 @@
-<div data-controller="gallery">
-  <!-- ヘッダー -->
-  <div class="bg-gray-800 text-white text-center py-4">
-    <h1 class="text-lg font-semibold"><%= @post.user.name %></h1>
-  </div>
-
-  <!-- メイン画像 -->
-  <!-- <div data-controller="gallery">
-      <div class="gallery02 swiper"> -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <% @post.images.each do |image| %>
-          <div class="swiper-slide">
-            <%= image_tag(image, alt: "投稿画像") %>
-          </div>
-        <% end %>
+<div class="bg-gray-100 py-10">
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div data-controller="gallery">
+      <!-- ヘッダー -->
+      <div class="bg-gray-800 text-white text-center py-4">
+        <h1 class="text-lg font-semibold"><%= @post.user.name %></h1>
       </div>
 
-      <div class="swiper-pagination"></div>
-      <!-- Swiper のボタンとページネーションを追加 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-scrollbar"></div>
-      <!-- <div class="swiper-pagination"></div>
-      </div>
-      <div class="gallery02-thumb">
-        <% @post.images.each_with_index do |image, index| %>
-          <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
-        <% end %>
-      </div> -->
-  </div>
-  <!-- </div> -->
-
-
-
-  <!-- 本文 -->
-  <div class="mt-6">
-    <label class="block text-gray-700 font-semibold mb-2">本文</label>
-    <div class="block w-full p-2 border border-gray-300 rounded-md bg-gray-50">
-      <%= @post.body %>
-    </div>
-  </div>
-
-  <!-- コメント -->
-  <section class="mt-6">
-    <h2 class="text-lg font-semibold mb-4">コメント</h2>
-    <div class="space-y-4">
-      <!-- コメント1 -->
-      <div class="flex items-start space-x-4">
-        <div class="w-10 h-10 bg-gray-400 rounded-full"></div>
-        <div class="flex-1">
-          <div class="bg-gray-100 rounded p-3">
-            <p class="text-sm text-gray-800">ここのケーキ美味しいですよね！！</p>
+      <!-- メイン画像 -->
+      <!-- <div data-controller="gallery">
+          <div class="gallery02 swiper"> -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <% @post.images.each do |image| %>
+              <div class="swiper-slide">
+                <%= image_tag(image, alt: "投稿画像") %>
+              </div>
+            <% end %>
           </div>
-          <p class="text-xs text-gray-500 mt-1">1月19日 15:30</p>
+
+          <div class="swiper-pagination"></div>
+          <!-- Swiper のボタンとページネーションを追加 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
+          <!-- <div class="swiper-pagination"></div>
+          </div>
+          <div class="gallery02-thumb">
+            <% @post.images.each_with_index do |image, index| %>
+              <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
+            <% end %>
+          </div> -->
+      </div>
+      <!-- </div> -->
+
+
+
+      <!-- 本文 -->
+      <div class="mt-6">
+        <label class="block text-gray-700 font-semibold mb-2">本文</label>
+        <div class="block w-full p-2 border border-gray-300 rounded-md bg-gray-50">
+          <%= @post.body %>
         </div>
       </div>
-      <!-- コメント2 -->
-      <div class="flex items-start space-x-4">
-        <div class="w-10 h-10 bg-gray-400 rounded-full"></div>
-        <div class="flex-1">
-          <div class="bg-gray-100 rounded p-3">
-            <p class="text-sm text-gray-800">楽しみにしています！</p>
+
+      <!-- コメントフォーム -->
+      <%= render 'comments/form', comment: @comment, posr: @post %>
+
+      <!-- コメント -->
+      <%= render @comments %>
+      <section class="mt-6">
+        <h2 class="text-lg font-semibold mb-4">コメント</h2>
+        <div class="space-y-4">
+          <!-- コメント1 -->
+          <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 bg-gray-400 rounded-full"></div>
+            <div class="flex-1">
+              <div class="bg-gray-100 rounded p-3">
+                <p class="text-sm text-gray-800">ここのケーキ美味しいですよね！！</p>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">1月19日 15:30</p>
+            </div>
           </div>
-          <p class="text-xs text-gray-500 mt-1">1月19日 15:35</p>
+          <!-- コメント2 -->
+          <%# コメントフォーム %>
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <table class="table">
+                <tbody id="table-comment">
+                  <%# コメント一覧 %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 bg-gray-400 rounded-full"></div>
+            <div class="flex-1">
+              <div class="bg-gray-100 rounded p-3">
+                <p class="text-sm text-gray-800">楽しみにしています！</p>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">1月19日 15:35</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>
