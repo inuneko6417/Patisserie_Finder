@@ -1,25 +1,14 @@
-<tr id="comment-<%= comment.id %>">
-  <td style="width: 60px">
-    <%= image_tag "sample", width: "50", height: "50", class: "rounded-circle" %>
-  </td>
-  <td>
-    <h3 class="small"><%= comment.user.name %></h3>
-    <p><%= simple_format(comment.body) %></p>
-  </td>
-  <% if current_user.own?(comment) %>
-    <td class="action">
-      <ul class="list-inline justify-content-center" style="float: right;">
-        <li class="list-inline-item">
-          <%= link_to "#", class: "edit-comment-link" do %>
-            <i class="bi bi-pencil-fill"></i>
-          <% end %>
-        </li>
-        <li class="list-inline-item">
-          <%= link_to "#", class: "delete-comment-link" do %>
-            <i class="bi bi-trash-fill"></i>
-          <% end %>
-        </li>
-      </ul>
-    </td>
-  <% end %>
+<tr id="comment-<%= comment.id %>" class="border-b">
+
+  <div class="flex items-start space-x-4">
+      <td class="w-16">
+        <%= image_tag "sample", width: "50", height: "50", class: "rounded-full" %>
+      </td>
+    <div class="flex-1">
+      <div class="bg-gray-100 rounded p-3">
+        <p class="text-sm text-gray-800"><%= simple_format(comment.body) %></p>
+      </div>
+      <p class="text-xs text-gray-500 mt-1"><%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %></p>
+    </div>
+  </div>
 </tr>
