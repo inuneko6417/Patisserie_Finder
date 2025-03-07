@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :profile, ProfileUploader
   has_secure_password
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

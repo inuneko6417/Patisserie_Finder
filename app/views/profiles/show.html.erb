@@ -1,0 +1,27 @@
+<div class="max-w-4xl mx-auto pt-6">
+  <div class="bg-white shadow-lg rounded-lg p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-semibold"><%= t('.title') %></h1>
+      <%= link_to t('defaults.edit'), edit_profile_path, class: 'px-4 py-2 bg-green-500 text-white text-sm font-medium rounded-lg hover:bg-green-600 transition' %>
+    </div>
+
+    <table class="w-full border-collapse border border-gray-200">
+      <tbody>
+        <tr class="border-b border-gray-200">
+          <th class="p-4 text-left font-medium text-gray-700"><%= User.human_attribute_name(:email) %></th>
+          <td class="p-4 text-gray-800"><%= current_user.email %></td>
+        </tr>
+        <tr class="border-b border-gray-200">
+          <th class="p-4 text-left font-medium text-gray-700"><%= User.human_attribute_name(:full_name) %></th>
+          <td class="p-4 text-gray-800"><%= current_user.name %></td>
+        </tr>
+        <tr>
+          <th class="p-4 text-left font-medium text-gray-700"><%= User.human_attribute_name(:avatar) %></th>
+          <td class="p-4">
+            <%= image_tag "sample", class: 'rounded-full w-12 h-12 object-cover' %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

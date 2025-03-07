@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get "profiles/show"
+  get "profiles/edit"
   root "pages#home"
   resources :users, only: [ :new, :create ] # ユーザー登録に必要なルートのみ追加
   resources :posts, only: [ :index, :show, :new, :create ] do
     resources :comments, only: %i[create edit destroy], shallow: true
   end
   resources :patisseries, only: [ :index, :show ]
+  resource :profile, only: %i[show edit update]
 
   get "signup", to: "users#new", as: :signup # 新規登録ページ用のカスタムルート
   get "login", to: "sessions#new" # ログインページ（後で実装）
