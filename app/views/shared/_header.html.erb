@@ -30,7 +30,10 @@
               >
                 <!-- 掲示板一覧 -->
                 <li>
-                  <%= link_to 'ランキング一覧', patisseries_index_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+                  <%= link_to 'イチオシ一覧', patisseries_index_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+                </li>
+                <li>
+                  <%= link_to 'ランキング一覧', "#", class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
                 </li>
                 <li>
                   <%= link_to '掲示板一覧', posts_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
@@ -63,19 +66,25 @@
             <!-- プロフィールメニュー -->
             <li class="relative">
               <%= link_to '#', class: "flex items-center text-white hover:text-gray-200", id: "profile-link" do %>
-                <%= image_tag 'sample.jpg', class: "rounded-full w-10 h-10 border-2 border-white mr-2", alt: "Profile" %>
-                <span class="hidden lg:block">inuneko たろう</span>
+                <% if @user&.profile&.url.present? %>
+                  <%= image_tag @user.profile.url, class: "rounded-full w-10 h-10 border-2 border-white mr-2", alt: "Profile" %>
+                <% else %>
+                  <%= image_tag "sample", class: "rounded-full w-10 h-10 border-2 border-white mr-2", alt: "Default Profile" %>
+                <% end %>
+                <span class="hidden lg:block"><%= current_user&.name || "ゲスト" %></span>
               <% end %>
-              <ul id="profile-dropdown" class="absolute right-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
-                <li class="px-6 py-3 text-gray-700">inuneko たろう</li>
-                <li class="border-t border-gray-200"></li>
-                <li>
-                  <%= link_to 'プロフィール', '#', class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
-                </li>
-                <li>
-                  <%= link_to 'ログアウト', logout_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900", data: { turbo_method: :delete } %>
-                </li>
-              </ul>
+              <% if current_user %>
+                <ul id="profile-dropdown" class="absolute right-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
+                  <li class="px-6 py-3 text-gray-700"><%= current_user.name %></li>
+                  <li class="border-t border-gray-200"></li>
+                  <li>
+                    <%= link_to 'プロフィール', profiles_show_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+                  </li>
+                  <li>
+                    <%= link_to 'ログアウト', logout_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900", data: { turbo_method: :delete } %>
+                  </li>
+                </ul>
+              <% end %>
             </li>
           </ul>
         </div>

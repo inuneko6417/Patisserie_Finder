@@ -1,4 +1,5 @@
 class PatisseriesController < ApplicationController
+  before_action :set_user
   def index
     @patisseries = [
       { id: 1, name: "パティスリーA", description: "人気No.1のケーキショップ", rank: 1 },
@@ -42,5 +43,11 @@ class PatisseriesController < ApplicationController
         { user: "ねこいぬ", text: "季節限定がおすすめです！", time: "2023/01/15 16:55" }
       ]
     }
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end
