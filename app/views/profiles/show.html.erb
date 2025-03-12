@@ -18,7 +18,7 @@
         <tr>
           <th class="p-4 text-left font-medium text-gray-700"><%= User.human_attribute_name(:avatar) %></th>
           <td class="p-4">
-            <%= image_tag "sample", class: 'rounded-full w-12 h-12 object-cover' %>
+            <%= image_tag @user.profile.url, class: 'rounded-full w-12 h-12 object-cover' %>
           </td>
         </tr>
       </tbody>

@@ -1,5 +1,40 @@
 ja:
   hello: "こんにちは"
-  errors:
-    messages:
-      record_invalid: "バリデーションエラーです"
+  defaults:
+    edit: "編集"
+  profiles:
+    show:
+      title: "プロフィール"
+    edit:
+      title: "プロフィール編集"
+
+  activerecord:
+    errors:
+      messages:
+
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        full_name: "名前"
+        avatar: "アバター"
+
+      post:
+        title: "タイトル"
+        content: "内容"
+
+      profile:
+        email: "メールアドレス"
+
+    helpers:
+      submit:
+        user:
+          create: "登録"
+          update: "更新"
+        post:
+          create: "投稿"
+          update: "更新"
+
+    models:
