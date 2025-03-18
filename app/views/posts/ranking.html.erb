@@ -1,0 +1,8 @@
+<h1>投稿ランキング</h1>
+<% @posts.each_with_index do |post, index| %>
+  <div class="post mb-4 p-4 border rounded-lg">
+    <h2 class="text-xl font-bold"><%= link_to "#{index + 1}. #{post.title}", post_path(post) %></h2>
+    <p class="text-gray-600">投稿者: <%= post.user.name %></p>
+    <p class="text-gray-600">コメント数: <%= post.comments.count %></p>
+  </div>
+<% end %>
