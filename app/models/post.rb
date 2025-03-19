@@ -7,5 +7,5 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 1000 }
 
   scope :recent, -> { order(created_at: :desc) }
-  scope :by_comments_count, -> { left_joins(:comments).group(:id).order('COUNT(comments.id) DESC') }
+  scope :by_comments_count, -> { left_joins(:comments).group(:id).order("COUNT(comments.id) DESC") }
 end
