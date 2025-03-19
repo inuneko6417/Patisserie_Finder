@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.by_comments_count.includes(:user)
   end
 
   def new
@@ -24,6 +24,10 @@ class PostsController < ApplicationController
       flash[:error] = "投稿の作成に失敗しました"
       render :new
     end
+  end
+
+  def ranking
+    @posts = Post.by_comments_count.includes(:user)
   end
 
   private

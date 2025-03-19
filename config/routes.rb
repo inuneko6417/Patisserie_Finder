@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root "pages#home"
   resources :users, only: [ :new, :create ] # ユーザー登録に必要なルートのみ追加
   resources :posts, only: [ :index, :show, :new, :create ] do
+    collection do
+      get :ranking
+    end
     resources :comments, only: %i[create edit destroy], shallow: true
   end
   resources :patisseries, only: [ :index, :show ]
