@@ -1,39 +1,38 @@
 <div class="bg-gray-100 py-10">
   <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-    <div data-controller="gallery">
+    <div data-controller="posts_image">
       <!-- ヘッダー -->
       <div class="bg-gray-800 text-white text-center py-4">
         <h1 class="text-lg font-semibold"><%= @post.user.name %></h1>
       </div>
 
-      <!-- メイン画像 -->
-      <!-- <div data-controller="gallery">
-          <div class="gallery02 swiper"> -->
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <% @post.images.each do |image| %>
-              <div class="swiper-slide">
-                <%= image_tag(image, alt: "投稿画像") %>
-              </div>
-            <% end %>
-          </div>
+      <!-- Swiperのメイン画像スライダー -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <% @post.images.each do |image| %>
+            <div class="swiper-slide">
+              <%= image_tag(image, alt: "投稿画像", class: "object-cover w-full h-80 rounded-lg") %>
+            </div>
+          <% end %>
+        </div>
 
-          <div class="swiper-pagination"></div>
-          <!-- Swiper のボタンとページネーションを追加 -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-scrollbar"></div>
-          <!-- <div class="swiper-pagination"></div>
-          </div>
-          <div class="gallery02-thumb">
-            <% @post.images.each_with_index do |image, index| %>
-              <%= image_tag(image, class: "thumb-media #{'thumb-media-active' if index == 0}", data: { index: index }) %>
-            <% end %>
-          </div> -->
+        <!-- ナビゲーションボタン -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- ページネーション -->
+        <div class="swiper-pagination"></div>
       </div>
-      <!-- </div> -->
 
-
+      <!-- サムネイル（サブ画像スライダー） -->
+      <div class="swiper myThumbs mt-4">
+        <div class="swiper-wrapper">
+          <% @post.images.each do |image| %>
+            <div class="swiper-slide cursor-pointer">
+              <%= image_tag(image, alt: "投稿画像", class: "object-cover w-20 h-20 rounded-md") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
       <!-- 本文 -->
       <div class="mt-6">
