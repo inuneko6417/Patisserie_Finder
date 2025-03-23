@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <% if flash[:success] %>
-    <div class="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
-      <%= flash[:success] %>
-    </div>
-  <% elsif flash[:error] %>
-    <div class="p-4 mb-4 text-red-800 bg-red-200 rounded-lg">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +20,18 @@
         <%= render 'shared/header_login' %>
       <% end %>
     <% end %>
+
+    <!-- Flash メッセージ -->
+    <% if flash[:success] %>
+      <div class="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
+        <%= flash[:success] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="p-4 mb-4 text-red-800 bg-red-200 rounded-lg">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

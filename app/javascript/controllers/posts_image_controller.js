@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
 
 export default class extends Controller {
   connect() {
