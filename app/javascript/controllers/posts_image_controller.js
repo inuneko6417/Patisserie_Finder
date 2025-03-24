@@ -4,7 +4,7 @@ import "swiper/css/bundle";
 
 export default class extends Controller {
   connect() {
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("turbo:load", () => {
       var swiperMain = new Swiper(".mySwiper", {
         loop: true, // ループ設定
         spaceBetween: 10,

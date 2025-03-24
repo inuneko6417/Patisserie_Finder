@@ -41,7 +41,6 @@
         <!-- サムネイル（サブ画像スライダー） -->
         <div class="swiper myThumbs mt-4">
           <div class="swiper-wrapper">
-            <%= turbo_stream_from "post_#{@post.id}_images" %>
             <% @post.images.each do |image| %>
               <div class="swiper-slide cursor-pointer">
                 <%= image_tag(image, alt: "投稿画像", class: "object-cover w-20 h-20 rounded-md") %>
