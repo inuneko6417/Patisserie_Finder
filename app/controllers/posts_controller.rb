@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.by_comments_count.includes(:user)
+    @posts = Post.by_comments_count.includes(:user).order(created_at: :desc)
   end
 
   def new

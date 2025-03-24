@@ -15,3 +15,6 @@ application.register("header", HeaderController)
 
 import LoginController from "./login_controller"
 application.register("login", LoginController)
+
+import PostsImageController from "./posts_image_controller"
+application.register("posts_image", PostsImageController)
