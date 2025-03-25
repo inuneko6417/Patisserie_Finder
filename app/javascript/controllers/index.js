@@ -18,3 +18,6 @@ application.register("login", LoginController)
 
 import PostsImageController from "./posts_image_controller"
 application.register("posts_image", PostsImageController)
+
+import PostsNewImageController from "./posts_new_image_controller"
+application.register("posts_new_image", PostsNewImageController)
