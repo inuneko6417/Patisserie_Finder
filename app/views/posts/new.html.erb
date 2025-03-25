@@ -1,4 +1,4 @@
-<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6" do |f| %>
+<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6", html: { multipart: true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -23,19 +23,12 @@
   </div>
 
   <!-- 画像アップロード -->
-  <div>
-    <%= f.label :images, "画像" %>
-    <%= f.file_field :images, multiple: true, accept: "image/*", data: { action: "change->gallery#previewImages" } %>
-  </div>
-
-  <div class="gallery02 swiper">
-    <div class="swiper-wrapper">
-      <!-- JavaScriptで画像プレビューを追加 -->
+  <div class="mt-4">
+    <%= f.label :images, "画像", class: "block text-gray-700 font-semibold mb-2" %>
+    <div id="image-fields-container">
+      <%= f.file_field :images, multiple: true, class: "block w-full p-2 border border-gray-300 rounded-md" %>
     </div>
-  </div>
-
-  <div class="gallery02-thumb">
-    <!-- JavaScriptでサムネイルを追加 -->
+    <div id="image-preview-container" class="mt-4 flex flex-wrap gap-2"></div>
   </div>
 
   <!-- 投稿ボタン -->
@@ -43,3 +36,58 @@
     <%= f.submit "投稿する", class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageFieldsContainer = document.getElementById("image-fields-container");
+    const previewContainer = document.getElementById("image-preview-container");
+
+    const handleImagePreview = (event) => {
+      const fileInput = event.target;
+      const files = Array.from(fileInput.files); // ファイルを配列化
+
+      files.forEach((file, index) => {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          const imgContainer = document.createElement("div");
+          imgContainer.className = "relative w-24 h-24 mt-2";
+          imgContainer.dataset.index = index; // ファイルごとにインデックスを設定
+
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.className = "w-full h-full object-cover rounded-md";
+
+          const deleteButton = document.createElement("button");
+          deleteButton.innerHTML = "×";
+          deleteButton.className = "absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center";
+
+          deleteButton.addEventListener("click", () => {
+            imgContainer.remove();
+
+            // `DataTransfer` を使って現在のファイルリストから削除
+            const dataTransfer = new DataTransfer();
+            Array.from(fileInput.files).forEach((f, i) => {
+              if (i !== index) { // 削除対象以外のファイルを DataTransfer に追加
+                dataTransfer.items.add(f);
+              }
+            });
+
+            fileInput.files = dataTransfer.files; // 新しいファイルリストを設定
+          });
+
+          imgContainer.appendChild(img);
+          imgContainer.appendChild(deleteButton);
+          previewContainer.appendChild(imgContainer);
+        };
+
+        reader.readAsDataURL(file);
+      });
+    };
+
+    const initialFileField = document.querySelector('input[type="file"]');
+    if (initialFileField) {
+      initialFileField.addEventListener("change", handleImagePreview);
+    }
+  });
+</script>
