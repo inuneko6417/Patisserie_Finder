@@ -1,4 +1,4 @@
-<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6" do |f| %>
+<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6", html: { multipart: true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -23,19 +23,14 @@
   </div>
 
   <!-- 画像アップロード -->
-  <div>
-    <%= f.label :images, "画像" %>
-    <%= f.file_field :images, multiple: true, accept: "image/*", data: { action: "change->gallery#previewImages" } %>
-  </div>
-
-  <div class="gallery02 swiper">
-    <div class="swiper-wrapper">
-      <!-- JavaScriptで画像プレビューを追加 -->
+  <div data-controller="posts_new_image">
+    <div class="mt-4">
+      <%= f.label :images, "画像", class: "block text-gray-700 font-semibold mb-2" %>
+      <div id="image-fields-container">
+        <%= f.file_field :images, multiple: true, class: "block w-full p-2 border border-gray-300 rounded-md" %>
+      </div>
+      <div id="image-preview-container" class="mt-4 flex flex-wrap gap-2"></div>
     </div>
-  </div>
-
-  <div class="gallery02-thumb">
-    <!-- JavaScriptでサムネイルを追加 -->
   </div>
 
   <!-- 投稿ボタン -->
