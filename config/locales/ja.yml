@@ -10,6 +10,11 @@ ja:
 
   activerecord:
     errors:
+      models:
+        post:
+          attributes:
+            images:
+              too_many: "は8枚までアップロードできます"
       messages:
 
     attributes:
@@ -24,6 +29,7 @@ ja:
       post:
         title: "タイトル"
         content: "内容"
+        images: "画像"
 
       profile:
         email: "メールアドレス"

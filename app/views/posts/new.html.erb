@@ -1,40 +1,38 @@
-<%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6", html: { multipart: true } do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <!-- タイトル -->
-  <div class="mt-4">
-    <%= f.label :title, "店名", class: "block text-gray-700 font-semibold mb-2" %>
-    <%= f.text_field :title, class: "block w-full p-2 border border-gray-300 rounded-md" %>
-  </div>
+<div class="bg-gray-100 py-20">
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <%= form_with model: @post, local: true, class: "max-w-4xl mx-auto bg-white shadow-md rounded p-6", html: { multipart: true } do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-  <!-- 本文 -->
-  <div class="mt-4">
-    <%= f.label :body, "本文", class: "block text-gray-700 font-semibold mb-2" %>
-    <%= f.text_area :body, class: "block w-full p-2 border border-gray-300 rounded-md" %>
-  </div>
-
-  <!-- 画像アップロード -->
-  <div data-controller="posts_new_image">
-    <div class="mt-4">
-      <%= f.label :images, "画像", class: "block text-gray-700 font-semibold mb-2" %>
-      <div id="image-fields-container">
-        <%= f.file_field :images, multiple: true, class: "block w-full p-2 border border-gray-300 rounded-md" %>
+      <!-- タイトル -->
+      <div class="mt-4">
+        <%= f.label :title, "店名", class: "block text-gray-700 font-semibold mb-2" %>
+        <%= f.text_field :title, class: "block w-full p-2 border border-gray-300 rounded-md" %>
       </div>
-      <div id="image-preview-container" class="mt-4 flex flex-wrap gap-2"></div>
-    </div>
-  </div>
 
-  <!-- 投稿ボタン -->
-  <div class="mt-6">
-    <%= f.submit "投稿する", class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+      <!-- 本文 -->
+      <div class="mt-4">
+        <%= f.label :body, "本文", class: "block text-gray-700 font-semibold mb-2" %>
+        <%= f.text_area :body, class: "block w-full p-2 border border-gray-300 rounded-md" %>
+      </div>
+
+      <!-- 画像アップロード -->
+      <div data-controller="posts_new_image">
+        <div class="mt-4">
+          <%= f.label :images, "画像", class: "block text-gray-700 font-semibold mb-2" %>
+          <p class="text-sm text-gray-600">※ 画像は8枚までアップロードできます</p>
+          <div id="image-fields-container">
+            <%= f.file_field :images, multiple: true, class: "block w-full p-2 border border-gray-300 rounded-md" %>
+          </div>
+          <div id="image-preview-container" class="mt-4 flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+
+      <!-- 投稿ボタン -->
+      <div class="mt-6">
+        <%= f.submit "投稿する", class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
