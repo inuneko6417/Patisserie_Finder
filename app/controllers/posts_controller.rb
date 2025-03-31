@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash[:error] = "投稿の作成に失敗しました"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
