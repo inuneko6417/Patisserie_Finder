@@ -1,0 +1,2 @@
+class Patisserie < ApplicationRecord
+end

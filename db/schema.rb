@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_06_010933) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_31_091746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,8 +48,34 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_06_010933) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "patisserie_id"
+    t.index ["patisserie_id"], name: "index_comments_on_patisserie_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "patisserie_images", force: :cascade do |t|
+    t.bigint "patisserie_id", null: false
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patisserie_id"], name: "index_patisserie_images_on_patisserie_id"
+  end
+
+  create_table "patisseries", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "nearest_station"
+    t.boolean "eat_in"
+    t.boolean "takeout"
+    t.string "business_hours"
+    t.string "closed_on"
+    t.string "phone_number"
+    t.string "web_and_sns"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -78,7 +104,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_06_010933) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "patisseries", column: "patisserie_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "patisserie_images", "patisseries", column: "patisserie_id"
   add_foreign_key "posts", "users"
 end
