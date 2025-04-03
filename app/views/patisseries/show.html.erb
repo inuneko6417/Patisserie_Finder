@@ -1,6 +1,6 @@
 <div class="bg-gray-100 py-10">
   <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-    <!-- ランク & 店名 -->
+    <!-- 店名 -->
     <div class="bg-blue-500 text-white text-center py-4">
       <h1 class="text-2xl font-bold"><%= @patisserie[:name] %></h1>
     </div>
@@ -28,17 +28,41 @@
     <!-- Googleマップ -->
     <div class="mt-6">
       <h2 class="text-xl font-bold mb-4">Googleマップ</h2>
-      <div class="aspect-w-16 aspect-h-9">
-        <iframe
-          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=<%= CGI.escape(@patisserie[:address]) %>"
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </div>
+      <div id="map" class="w-full h-96"></div>
     </div>
+
+    <script>
+      function initMap() {
+        const address = "<%= @patisserie[:address] %>";  // 住所を取得
+        const geocoder = new google.maps.Geocoder(); // Geocoder を初期化
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,  // ズームレベル
+          center: { lat: 35.6895, lng: 139.6917 } // 初期位置（仮：東京）
+        });
+
+        // 住所を緯度経度に変換して地図を更新
+        geocoder.geocode({ address: address }, function(results, status) {
+          if (status === "OK") {
+            map.setCenter(results[0].geometry.location); // 取得した位置に移動
+
+            new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+
+          } else {
+            alert("Geocode was not successful for the following reason: " + status);
+          }
+        });
+      }
+    </script>
+
+    <!-- Google Maps API を読み込む（APIキーを設定） -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOwpSiMxmgjTqh1YeJxyRCQcBoo331N6M&callback=initMap" async defer></script>
+
+    <!-- 地図を表示するエリア -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
 
     <!-- コメントセクション -->
     <div class="p-6 border-t">
