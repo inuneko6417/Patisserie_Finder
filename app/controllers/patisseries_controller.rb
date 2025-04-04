@@ -2,29 +2,29 @@ class PatisseriesController < ApplicationController
   before_action :set_user
   def index
     @patisseries = [
-      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "人気No.1のケーキショップ"},
-      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: "新鮮なフルーツを使用"},
-      { id: 3, name: "パティスリーエスポワール", description: "地元で愛されるケーキ"},
-      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "特製スイーツが人気"},
-      { id: 5, name: "パティスリーテンアンド", description: "チョコレートケーキが絶品"},
-      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "アットホームな雰囲気"},
-      { id: 7, name: "パティスリーG", description: "職人技が光るケーキ"},
-      { id: 8, name: "パティスリーH", description: "絶妙な甘さが特徴"},
-      { id: 9, name: "パティスリーI", description: "美しいデザインケーキ"}
+      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設"},
+      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ"},
+      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店"},
+      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子"},
+      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品"},
+      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味"},
+      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ"},
+      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ"},
+      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物"}
     ]
   end
 
   def show
     @patisseries = [
-      { id: 1, name: "パティスリーA", description: "人気No.1のケーキショップ"},
-      { id: 2, name: "パティスリーB", description: "新鮮なフルーツを使用"},
-      { id: 3, name: "パティスリーC", description: "地元で愛されるケーキ"},
-      { id: 4, name: "パティスリーD", description: "特製スイーツが人気"},
-      { id: 5, name: "パティスリーE", description: "チョコレートケーキが絶品"},
-      { id: 6, name: "パティスリーF", description: "アットホームな雰囲気",},
-      { id: 7, name: "パティスリーG", description: "職人技が光るケーキ"},
-      { id: 8, name: "パティスリーH", description: "絶妙な甘さが特徴"},
-      { id: 9, name: "パティスリーI", description: "美しいデザインケーキ"}
+      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設"},
+      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ"},
+      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店"},
+      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子"},
+      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品"},
+      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味"},
+      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ"},
+      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ"},
+      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物"}
     ]
 
   # サンプルデータ
@@ -120,45 +120,45 @@ class PatisseriesController < ApplicationController
         ]
       },
       { id: 7,
-      name: "パティスリーG",
-      address: "神奈川県横浜市中区",
-      nearest_station: "横浜駅",
-      eat_in: true,
+      name: "パティスリーグランディール",
+      address: "神奈川県大和市大和東３丁目１５−５",
+      nearest_station: "大和駅",
+      eat_in: false,
       takeout: true,
-      business_hours: "10:00〜20:00",
-      closed_on: "水曜日",
-      phone_number: "045-123-4567",
-      web_and_sns: "https://example.com",
+      business_hours: "10:00〜18:00",
+      closed_on: "火,水曜日",
+      phone_number: "046-264-7508",
+      web_and_sns: "https://yyamato.com/patisserie-grandir/",
       comments: [
         { user: "いぬねこ", text: "おいしかったです！", time: "2023/01/15 16:50" },
         { user: "ねこいぬ", text: "季節限定がおすすめです！", time: "2023/01/15 16:55" }
         ]
       },
       { id: 8,
-      name: "パティスリーH",
-      address: "神奈川県横浜市中区",
-      nearest_station: "横浜駅",
-      eat_in: true,
+      name: "Patisserie Coeur&Heart",
+      address: "東京都町田市金井５丁目１９−１７ グランデュール金井",
+      nearest_station: "鶴川駅",
+      eat_in: false,
       takeout: true,
-      business_hours: "10:00〜20:00",
+      business_hours: "10:00〜19:00",
       closed_on: "水曜日",
-      phone_number: "045-123-4567",
-      web_and_sns: "https://example.com",
+      phone_number: "042-860-2066",
+      web_and_sns: "https://www.coeur-and-heart.info/",
       comments: [
         { user: "いぬねこ", text: "おいしかったです！", time: "2023/01/15 16:50" },
         { user: "ねこいぬ", text: "季節限定がおすすめです！", time: "2023/01/15 16:55" }
         ]
       },
       { id: 9,
-      name: "パティスリーI",
-      address: "神奈川県横浜市中区",
-      nearest_station: "横浜駅",
-      eat_in: true,
+      name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ",
+      address: "神奈川県鎌倉市小町２丁目１２−２５ 第一寿店舗",
+      nearest_station: "鎌倉駅",
+      eat_in: false,
       takeout: true,
-      business_hours: "10:00〜20:00",
-      closed_on: "水曜日",
-      phone_number: "045-123-4567",
-      web_and_sns: "https://example.com",
+      business_hours: "10:00〜18:00",
+      closed_on: "不定休",
+      phone_number: "0467-539-692",
+      web_and_sns: "https://www.sadaharuaoki.jp/marunouchi/",
       comments: [
         { user: "いぬねこ", text: "おいしかったです！", time: "2023/01/15 16:50" },
         { user: "ねこいぬ", text: "季節限定がおすすめです！", time: "2023/01/15 16:55" }
