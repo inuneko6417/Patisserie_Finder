@@ -2,29 +2,29 @@ class PatisseriesController < ApplicationController
   before_action :set_user
   def index
     @patisseries = [
-      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設"},
-      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ"},
-      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店"},
-      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子"},
-      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品"},
-      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味"},
-      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ"},
-      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ"},
-      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物"}
+      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設" },
+      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ" },
+      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店" },
+      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子" },
+      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品" },
+      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味" },
+      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ" },
+      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ" },
+      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物" }
     ]
   end
 
   def show
     @patisseries = [
-      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設"},
-      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ"},
-      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店"},
-      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子"},
-      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品"},
-      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味"},
-      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ"},
-      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ"},
-      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物"}
+      { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設" },
+      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ" },
+      { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店" },
+      { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子" },
+      { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品" },
+      { id: 6, name: "パティスリー サダハル アオキ パリ 丸の内店", description: "本場フランスの味" },
+      { id: 7, name: "パティスリーグランディール", description: "手作りの温かみ" },
+      { id: 8, name: "Patisserie Coeur&Heart", description: "ハート型スイーツ" },
+      { id: 9, name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ", description: "ミルフィーユが名物" }
     ]
 
   # サンプルデータ
