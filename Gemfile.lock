@@ -398,7 +398,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
-  brakeman (~> 7.0.0)
+  brakeman
   capybara
   carrierwave
   cssbundling-rails
