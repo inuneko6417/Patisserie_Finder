@@ -86,7 +86,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    brakeman (7.0.0)
+    brakeman (7.0.2)
       racc
     builder (3.3.0)
     capybara (3.40.0)
@@ -121,6 +121,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    dotenv (3.1.7)
+    dotenv-rails (3.1.7)
+      dotenv (= 3.1.7)
+      railties (>= 6.1)
     draper (4.0.4)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -394,12 +398,13 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
-  brakeman (~> 7.0.0)
+  brakeman
   capybara
   carrierwave
   cssbundling-rails
   debug
   devise
+  dotenv-rails
   draper
   factory_bot_rails
   faker
