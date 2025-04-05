@@ -76,7 +76,7 @@ class PatisseriesController < ApplicationController
       },
       { id: 4,
       name: "パティスリー・ラ・ベルデュール",
-      address: "〒245-0002 神奈川県横浜市泉区緑園５丁目２９−２０",
+      address: "神奈川県横浜市泉区緑園５丁目２９−２０",
       nearest_station: "緑園都市駅",
       eat_in: false,
       takeout: true,
