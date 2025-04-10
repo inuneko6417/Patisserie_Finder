@@ -5,10 +5,11 @@
       <h1 class="text-2xl font-bold"><%= @patisserie[:name] %></h1>
     </div>
 
-    <!-- 画像スライダー（ダミー） -->
-    <div class="h-60 bg-gray-300 flex items-center justify-center">
-      <p class="text-gray-500">複数枚の店舗の写真</p>
-    </div>
+    <!-- 画像スライダー -->
+    <% if @patisserie[:image].present? %>
+      <%= image_tag "patisseries/#{@patisserie[:image]}", alt: @patisserie[:name], class: "patisserie-image" %>
+    <% end %>
+
 
     <!-- 店舗情報 -->
     <div class="p-6">
