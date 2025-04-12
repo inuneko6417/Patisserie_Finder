@@ -3,7 +3,7 @@ class PatisseriesController < ApplicationController
   def index
     @patisseries = [
       { id: 1, name: "ル･ミリュウ 鎌倉山", description: "絶景カフェ併設", image: "le_milieu.png" },
-      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ",image: "un_cadeau.png" },
+      { id: 2, name: "パティスリー アンカド（patisserie un cadeau）", description: " 芸術的なケーキ", image: "un_cadeau.png" },
       { id: 3, name: "パティスリーエスポワール", description: "地元に愛される店", image: "espoir.png" },
       { id: 4, name: "パティスリー・ラ・ベルデュール", description: "季節感あふれる洋菓子", image: "la_verdure.png" },
       { id: 5, name: "パティスリーテンアンド", description: "シンプル＆上品", image: "ten&.png" },
