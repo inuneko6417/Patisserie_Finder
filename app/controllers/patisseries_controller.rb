@@ -39,7 +39,7 @@ class PatisseriesController < ApplicationController
         closed_on: "年中無休",
         phone_number: "0467-50-0226",
         web_and_sns: "https://lemilieu-kamakurayama.com/free/kamakuraya",
-        image: "le_milieu.png",
+        image: "le_milieu.png"
         },
         { id: 2,
         name: "パティスリー アンカド（patisserie un cadeau）",
@@ -51,7 +51,7 @@ class PatisseriesController < ApplicationController
         closed_on: "火曜日",
         phone_number: "050-5462-0484",
         web_and_sns: "https://uncadeau.info",
-        image: "un_cadeau.png",
+        image: "un_cadeau.png"
         },
         { id: 3,
         name: "パティスリーエスポワール",
@@ -63,7 +63,7 @@ class PatisseriesController < ApplicationController
         closed_on: "水曜日",
         phone_number: "046-229-2117",
         web_and_sns: "https://patisserie-espoir.shop",
-        image: "espoir.png",
+        image: "espoir.png"
         },
         { id: 4,
         name: "パティスリー・ラ・ベルデュール",
@@ -75,7 +75,7 @@ class PatisseriesController < ApplicationController
         closed_on: "月曜日",
         phone_number: "045-811-5123",
         web_and_sns: "https://www.verdure.co.jp/",
-        image: "la_verdure.png",
+        image: "la_verdure.png"
         },
         { id: 5,
         name: "パティスリーテンアンド",
@@ -87,7 +87,7 @@ class PatisseriesController < ApplicationController
         closed_on: "水曜日",
         phone_number: "03-6807-5622",
         web_and_sns: "https://www.parola.tokyo/",
-        image: "ten&.png",
+        image: "ten&.png"
         },
         { id: 6,
         name: "パティスリー サダハル アオキ パリ 丸の内店",
@@ -99,7 +99,7 @@ class PatisseriesController < ApplicationController
         closed_on: "水曜日",
         phone_number: "03-5293-2800",
         web_and_sns: "https://www.sadaharuaoki.jp/marunouchi/",
-        image: "sadaharu_aoki.png",
+        image: "sadaharu_aoki.png"
         },
         { id: 7,
         name: "パティスリーグランディール",
@@ -111,7 +111,7 @@ class PatisseriesController < ApplicationController
         closed_on: "火,水曜日",
         phone_number: "046-264-7508",
         web_and_sns: "https://yyamato.com/patisserie-grandir/",
-        image: "grandir.png",
+        image: "grandir.png"
         },
         { id: 8,
         name: "Patisserie Coeur&Heart",
@@ -123,7 +123,7 @@ class PatisseriesController < ApplicationController
         closed_on: "水曜日",
         phone_number: "042-860-2066",
         web_and_sns: "https://www.coeur-and-heart.info/",
-        image: "Coeur&Heart.png",
+        image: "Coeur&Heart.png"
         },
         { id: 9,
         name: "ラ·ブティック·ドゥ·ユキノシタ·カマクラ",
@@ -135,7 +135,7 @@ class PatisseriesController < ApplicationController
         closed_on: "不定休",
         phone_number: "0467-539-692",
         web_and_sns: "https://www.sadaharuaoki.jp/marunouchi/",
-        image: "kamakura_yukinosita.png",
+        image: "kamakura_yukinosita.png"
         }
     ]
     @patisserie = @patisserie.find { |p| p[:id] == params[:id].to_i }
