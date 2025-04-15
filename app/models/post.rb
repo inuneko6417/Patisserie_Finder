@@ -12,11 +12,11 @@ class Post < ApplicationRecord
   scope :by_comments_count, -> { left_joins(:comments).group(:id).order("COUNT(comments.id) DESC") }
 
   def self.ransackable_associations(auth_object = nil)
-    ["comments", "images_attachments", "images_blobs", "user"]
+    [ "comments", "images_attachments", "images_blobs", "user" ]
   end
 
   ransacker :comments_count do
-    query = '(SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id)'
+    query = "(SELECT COUNT(*) FROM comments WHERE comments.post_id = posts.id)"
     Arel.sql(query)
   end
 
