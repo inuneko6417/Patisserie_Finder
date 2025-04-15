@@ -1,19 +1,25 @@
-<div class="container mx-auto pt-3">
+<div class="container mx-auto pt-3 pb-20">
   <div class="grid grid-cols-1 lg:grid-cols-12">
     <div class="col-span-10 col-start-2">
       <!-- 検索フォーム -->
-      <%= search_form_for @q, url: posts_path, method: :get, html: { class: "mb-4" } do |f| %>
-        <div class="flex mb-3">
+      <%= search_form_for @q, url: posts_path, method: :get, html: { class: "mb-6" } do |f| %>
+        <div class="flex mb-4">
           <%= f.search_field :title_or_body_cont, placeholder: "タイトルや本文を検索", class: "form-input flex-grow border border-gray-300 rounded-l px-4 py-2 focus:ring focus:ring-blue-300" %>
           <%= f.submit "検索", class: "bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600" %>
         </div>
       <% end %>
     </div>
   </div>
-  <!-- 掲示板一覧 -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+
+  <% if @posts.present? %>
+    <div class="flex justify-center mb-10">
+      <%= paginate @posts %>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto my-8">
     <div class="col-span-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <% if @posts.present? %>
           <%= render @posts %>
         <% else %>
@@ -22,4 +28,10 @@
       </div>
     </div>
   </div>
+
+  <% if @posts.present? %>
+    <div class="flex justify-center mt-10">
+      <%= paginate @posts %>
+    </div>
+  <% end %>
 </div>
