@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.by_comments_count.includes(:user).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.by_comments_count.includes(:user).order(created_at: :desc)
   end
 
   def new
