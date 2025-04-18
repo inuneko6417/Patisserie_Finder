@@ -33,5 +33,12 @@
     <% end %>
 
     <%= yield %>
+    <footer class="bg-gray-100 border-t mt-12 py-4 text-center text-sm text-gray-500">
+      <div class="container mx-auto">
+        &copy; <%= Time.current.year %> MyApp |
+        <%= link_to '利用規約', terms_path, class: "underline hover:text-blue-500" %> |
+        <%= link_to 'プライバシーポリシー', privacy_path, class: "underline hover:text-blue-500" %>
+      </div>
+    </footer>
   </body>
 </html>
