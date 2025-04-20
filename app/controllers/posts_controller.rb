@@ -13,6 +13,20 @@ class PostsController < ApplicationController
     @images = @post.images
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order(created_at: :desc)
+
+    set_meta_tags(
+      title: @post.title,
+      description: @post.body.truncate(100),
+      og: {
+        title: @post.title,
+        description: @post.body.truncate(100),
+        image: @post.images.attached? ? url_for(@post.images.first) : image_url('ogp.png')
+      },
+      twitter: {
+        card: 'summary_large_image',
+        image: @post.images.attached? ? url_for(@post.images.first) : image_url('ogp.png')
+      }
+    )
   end
 
   def create
