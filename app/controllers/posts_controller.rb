@@ -20,11 +20,11 @@ class PostsController < ApplicationController
       og: {
         title: @post.title,
         description: @post.body.truncate(100),
-        image: @post.images.attached? ? url_for(@post.images.first) : image_url('ogp.png')
+        image: @post.images.attached? ? url_for(@post.images.first) : image_url("ogp.png")
       },
       twitter: {
-        card: 'summary_large_image',
-        image: @post.images.attached? ? url_for(@post.images.first) : image_url('ogp.png')
+        card: "summary_large_image",
+        image: @post.images.attached? ? url_for(@post.images.first) : image_url("ogp.png")
       }
     )
   end
