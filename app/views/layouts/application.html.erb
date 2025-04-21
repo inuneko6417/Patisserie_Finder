@@ -12,6 +12,10 @@
     <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" %>
     <%= display_meta_tags(default_meta_tags) %>
+    <meta property="og:title" content="パティスリーを共有できるサービス">
+    <meta property="og:description" content="パティスリーを共有できるサービスです。...">
+    <meta property="og:image" content="https://patisserie-finder-1.onrender.com/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
   </head>
   <body>
     <% unless current_page?(root_path) %>
