@@ -21,6 +21,9 @@
         <!-- ナビゲーションメニュー -->
         <div class="hidden lg:flex lg:items-center lg:space-x-8" id="navbar-menu">
           <ul class="flex flex-col lg:flex-row lg:space-x-8 space-y-3 lg:space-y-0">
+            <li>
+              <%= link_to '使い方', how_to_use_path, class: "text-white hover:text-gray-200 font-medium inline-block" %>
+            </li>
             <!-- 掲示板メニュー -->
             <li class="relative group">
               <%= link_to '掲示板', '#', class: "text-white hover:text-gray-200 font-medium inline-block" %>
