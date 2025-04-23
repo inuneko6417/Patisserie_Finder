@@ -31,16 +31,17 @@ gem "bcrypt", "~> 3.1.7"
 # =========
 # Utilities
 # =========
-gem "jbuilder"                             # JSON API用
-gem "rails-i18n"                           # 多言語対応
-gem "ransack"                              # 検索機能
-gem "kaminari"                             # ページネーション
-gem "image_processing"                     # 画像処理（Active Storage用）
-gem "carrierwave"                          # アップローダー
-gem "mini_magick", "~> 4.13"               # 画像処理（MiniMagick）
-gem "draper"                               # デコレータ
-gem "faker"                                # ダミーデータ生成
-gem "meta-tags"                            # SEO対策
+gem "jbuilder"                                     # JSON API用
+gem "rails-i18n"                                   # 多言語対応
+gem "ransack"                                      # 検索機能
+gem "kaminari"                                     # ページネーション
+gem "image_processing"                             # 画像処理（Active Storage用）
+gem "carrierwave"                                  # アップローダー
+gem "mini_magick", "~> 4.13"                       # 画像処理（MiniMagick）
+gem "draper"                                       # デコレータ
+gem "faker"                                        # ダミーデータ生成
+gem "meta-tags"                                    # SEO対策
+gem "dotenv-rails", groups: [ :development, :test ]  # 環境変数管理
 
 # ===============
 # Development & Test
@@ -51,7 +52,6 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails"
   gem "factory_bot_rails"
-  gem "dotenv-rails"
 end
 
 group :development do

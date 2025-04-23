@@ -7,21 +7,21 @@ module ApplicationHelper
       charset: "utf-8",
       description: "パティスリーを共有できるサービスです。自分の好きなパティスリーを登録して、他の人と共有しましょう。",
       keywords: "ケーキ,パティスリー,地元,共有",
-      canonical: "https://patisserie-finder-1.onrender.com",
+      canonical: "https://patisserie-finder.onrender.com",
       separator: "|",
       og: {
-        site_name: :site,
-        title: :title,
-        description: :description,
+        site_name: "patisserie_finder",
+        title: "パティスリーを共有できるサービス",
+        description: "パティスリーを共有できるサービスです。自分の好きなパティスリーを登録して、他の人と共有しましょう。",
         type: "website",
-        url: "https://patisserie-finder-1.onrender.com",
-        image: image_url("ogp.png"),
-        local: "ja-JP"
+        url: "https://patisserie-finder.onrender.com",
+        image: "https://patisserie-finder.onrender.com/ogp.png",
+        locale: "ja_JP"
       },
       twitter: {
         card: "summary_large_image",
         site: "@obvyamdrss",
-        image: image_url("ogp.png")
+        image: "https://patisserie-finder.onrender.com/ogp.png"
       }
     }
   end
