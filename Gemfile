@@ -41,7 +41,7 @@ gem "mini_magick", "~> 4.13"                       # 画像処理（MiniMagick�
 gem "draper"                                       # デコレータ
 gem "faker"                                        # ダミーデータ生成
 gem "meta-tags"                                    # SEO対策
-gem "dotenv-rails", groups: [:development, :test]  # 環境変数管理
+gem "dotenv-rails", groups: [ :development, :test ]  # 環境変数管理
 
 # ===============
 # Development & Test
