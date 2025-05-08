@@ -24,4 +24,10 @@ class ProfileUploader < CarrierWave::Uploader::Base
   def extension_allowlist
     %w[jpg jpeg gif png]
   end
+
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 end

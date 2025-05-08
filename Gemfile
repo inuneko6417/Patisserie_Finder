@@ -42,6 +42,9 @@ gem "draper"                                       # デコレータ
 gem "faker"                                        # ダミーデータ生成
 gem "meta-tags"                                    # SEO対策
 gem "dotenv-rails", groups: [ :development, :test ]  # 環境変数管理
+gem "aws-sdk-s3", require: false
+gem "fog-aws"
+
 
 # ===============
 # Development & Test
