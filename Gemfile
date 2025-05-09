@@ -44,6 +44,7 @@ gem "meta-tags"                                    # SEO対策
 gem "dotenv-rails", groups: [ :development, :test ]  # 環境変数管理
 gem "aws-sdk-s3", require: false
 gem "fog-aws"
+gem "brakeman", require: false
 
 
 # ===============
@@ -51,7 +52,6 @@ gem "fog-aws"
 # ===============
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
-  gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails"
   gem "factory_bot_rails"
