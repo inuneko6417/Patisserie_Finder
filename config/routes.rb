@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get "terms", to: "pages#terms", as: :terms
   get "privacy", to: "pages#privacy", as: :privacy
   get "how_to_use", to: "pages#how_to_use"
+  post "posts/upload_image", to: "posts#upload_image"
 end
