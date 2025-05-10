@@ -2,7 +2,7 @@
   <div id="post-id-<%= post.id %>">
     <div class="card border border-gray-300 shadow-md hover:shadow-lg transition-all rounded-lg bg-white">
 
-      <% if post.images.any? %>
+      <% if post.images.first.present? %>
         <div class="overflow-hidden rounded-t-lg">
           <%= image_tag post.images.first, alt: post.title, class: "w-full h-60 object-cover" %>
         </div>
