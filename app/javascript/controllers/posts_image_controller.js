@@ -30,7 +30,7 @@ export default class extends Controller {
     });
 
     // スライダー間の連携（必要に応じて）
-    swiperMain.controller.control = swiperThumbs;
-    swiperThumbs.controller.control = swiperMain;
+    // swiperMain.controller.control = swiperThumbs;
+    // swiperThumbs.controller.control = swiperMain;
   }
 }

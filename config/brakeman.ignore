@@ -1,0 +1,39 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "b5973dc2c3635dd58ed7038e61cb7c2bd5b536930d7e2f797d5472946df6c5b6",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/posts/index.html.erb",
+      "line": 24,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => Post.ransack(params[:q]).result.by_comments_count.includes(:user).order(:created_at => :desc).page(params[:page]).per(12), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "PostsController",
+          "method": "index",
+          "line": 5,
+          "file": "app/controllers/posts_controller.rb",
+          "rendered": {
+            "name": "posts/index",
+            "file": "app/views/posts/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "posts/index"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.0.2"
+}
