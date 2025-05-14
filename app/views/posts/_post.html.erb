@@ -1,6 +1,6 @@
 <div class="col-span-12 lg:col-span-1 mb-3">
   <div id="post-id-<%= post.id %>">
-    <div class="card border border-gray-300 shadow-md hover:shadow-lg transition-all rounded-lg bg-white">
+    <div class="border border-gray-300 shadow-md hover:shadow-lg transition-shadow rounded-lg bg-white">
 
       <% if post.images.first.present? %>
         <div class="overflow-hidden rounded-t-lg">
@@ -14,21 +14,17 @@
             <%= link_to post.title, post_path(post), class: "text-blue-600 hover:underline" %>
           </h4>
           <div class="ml-auto flex space-x-3">
-            <%= link_to '#', id: "button-edit-#{post.id}", class: "text-gray-500 hover:text-blue-600 transition" do %>
-              <i class="bi bi-pencil-fill text-lg"></i>
-            <% end %>
-            <%= link_to '#', id: "button-delete-#{post.id}", method: :delete, data: {confirm: ''}, class: "text-gray-500 hover:text-red-600 transition" do %>
-              <i class="bi bi-trash-fill text-lg"></i>
-            <% end %>
+            <%= render "crud_menus", post: post if current_user.own?(post) %>
           </div>
         </div>
-        <ul class="text-sm text-gray-400 mt-3 space-y-2">
+
+        <ul class="text-sm text-gray-500 mt-3 space-y-2">
           <li class="flex items-center space-x-2">
-            <i class="bi bi-person text-gray-500"></i>
+            <i class="fas fa-user text-gray-400"></i>
             <span class="font-medium"><%= post.user.name %></span>
           </li>
           <li class="flex items-center space-x-2">
-            <i class="bi bi-calendar text-gray-500"></i>
+            <i class="fas fa-calendar-alt text-gray-400"></i>
             <span><%= l post.created_at, format: :short %></span>
           </li>
         </ul>

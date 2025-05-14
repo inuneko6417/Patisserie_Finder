@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
+
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result.by_comments_count.includes(:user).order(created_at: :desc).page(params[:page]).per(12)
@@ -6,6 +8,24 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post, notice: '記事を更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post.destroy!
+    redirect_to posts_path, notice: '記事を削除しました'
   end
 
   def show

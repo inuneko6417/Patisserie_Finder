@@ -8,6 +8,7 @@ ja:
   hello: "こんにちは"
   defaults:
     edit: "編集"
+    delete_confirm: "本当に削除しますか？"
   profiles:
     show:
       title: "プロフィール"
