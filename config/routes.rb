@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :ranking
     end
-    resources :comments, only: %i[create edit update destroy], shallow: true
+    resources :comments, only: %i[create destroy], shallow: true
   end
   resources :patisseries, only: [ :index, :show ]
   resource :profile, only: %i[show edit update]

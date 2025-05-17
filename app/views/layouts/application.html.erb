@@ -6,8 +6,9 @@
     <title>ユーザー登録</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= turbo_include_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <!-- SwiperのCSSとJS -->
     <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" %>
