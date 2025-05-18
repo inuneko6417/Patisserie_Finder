@@ -63,7 +63,11 @@
 
       <!-- コメント -->
       <h2 class="text-lg font-semibold mb-4">コメント</h2>
-      <%= render @comments %>
+      <%= turbo_frame_tag 'comments' do %>
+        <div id="comments">
+          <%= render @post.comments.order(created_at: :desc) %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

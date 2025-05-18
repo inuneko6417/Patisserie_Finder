@@ -1,6 +1,6 @@
 <div class="mb-6">
   <div class="max-w-4xl mx-auto px-4">
-    <%= form_with model: @comment, url: post_comments_path(@post), local: true do |f| %>
+    <%= form_with model: @comment, url: post_comments_path(@comment.post), local: true do |f| %>
       <div class="mb-4">
         <%= f.label :body, "コメントを追加", class: "block text-gray-700 font-semibold mb-2" %>
         <%= f.text_area :body, class: "w-full p-3 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500", rows: 4, placeholder: Comment.human_attribute_name(:body) %>

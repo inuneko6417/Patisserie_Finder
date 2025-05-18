@@ -29,9 +29,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id]) # 単一の投稿を取得
+    @post = Post.find(params[:id])
     @images = @post.images
-    @comment = Comment.new
+    @comment = @post.comments.build(user: current_user) # 投稿と紐付け
     @comments = @post.comments.includes(:user).order(created_at: :desc)
 
     set_meta_tags(
@@ -48,6 +48,7 @@ class PostsController < ApplicationController
       }
     )
   end
+
 
   def create
     @post = current_user.posts.new(post_params)
