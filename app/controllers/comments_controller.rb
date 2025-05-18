@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.turbo_stream
-        format.html { redirect_to post_path(@comment.post), notice: t('コメントが作成されました') }
+        format.html { redirect_to post_path(@comment.post), notice: t("コメントが作成されました") }
       else
-        format.html { redirect_to post_path(@comment.post), alert: t('コメントの作成に失敗しました') }
+        format.html { redirect_to post_path(@comment.post), alert: t("コメントの作成に失敗しました") }
       end
     end
   end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to post_path(@comment.post), notice: t('コメントが削除されました') }
+      format.html { redirect_to post_path(@comment.post), notice: t("コメントが削除されました") }
     end
   end
 
