@@ -14,7 +14,7 @@
             <%= link_to post.title, post_path(post), class: "text-blue-600 hover:underline" %>
           </h4>
           <div class="ml-auto flex space-x-3">
-            <%= render "crud_menus", post: post if current_user.own?(post) %>
+            <%= render "crud_menus", post: post if current_user&.own?(post) %>
           </div>
         </div>
 
