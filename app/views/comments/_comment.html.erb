@@ -1,6 +1,6 @@
 <tr id="comment-<%= comment.id %>" class="border-b">
 
-  <div class="flex items-start space-x-4">
+  <div class="flex items-start space-x-4" id="<%= dom_id(comment) %>">
       <td class="w-16">
         <%= image_tag comment.user.profile.url, class: "w-12 h-12 rounded-full" %>
       </td>
