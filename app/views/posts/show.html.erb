@@ -59,15 +59,13 @@
       </div>
 
       <!-- コメントフォーム -->
-      <%= render 'comments/form', comment: @comment, posr: @post %>
+      <%= render 'comments/form', comment: @comment, post: @post %>
 
       <!-- コメント -->
       <h2 class="text-lg font-semibold mb-4">コメント</h2>
-      <%= turbo_frame_tag 'comments' do %>
-        <div id="comments">
-          <%= render @post.comments.order(created_at: :desc) %>
-        </div>
-      <% end %>
+      <div id="table-comment">
+        <%= render @comments %>
+      </div>
     </div>
   </div>
 </div>

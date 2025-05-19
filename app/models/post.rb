@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  after_create_commit { broadcast_append_to("posts") }
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many_attached :images
