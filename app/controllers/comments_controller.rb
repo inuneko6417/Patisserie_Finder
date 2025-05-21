@@ -1,15 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
-
-    respond_to do |format|
-      if @comment.save
-        format.turbo_stream
-        format.html { redirect_to post_path(@comment.post), notice: t("コメントが作成されました") }
-      else
-        format.html { redirect_to post_path(@comment.post), alert: t("コメントの作成に失敗しました") }
-      end
-    end
+    @comment.save
   end
 
   def destroy
