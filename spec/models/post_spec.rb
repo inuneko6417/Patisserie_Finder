@@ -39,27 +39,4 @@ RSpec.describe Post, type: :model do
       expect(post).to be_valid
     end
   end
-
-  # describe 'アソシエーション' do
-  #   it 'ユーザーに属していること' do
-  #     assoc = described_class.reflect_on_association(:user)
-  #     expect(assoc.macro).to eq :belongs_to
-  #   end
-  #   # 必要ならコメントとの関連もテスト
-  #   it 'コメントを持っていること' do
-  #     assoc = described_class.reflect_on_association(:comments)
-  #     expect(assoc.macro).to eq :has_many
-  #   end
-  # end
-
-  # describe 'スコープ・クラスメソッド' do
-  #   before do
-  #     create(:post, title: '古い投稿', created_at: 1.day.ago)
-  #     create(:post, title: '新しい投稿', created_at: Time.current)
-  #   end
-  #
-  #   it 'recentスコープが新しい順で並ぶこと' do
-  #     expect(Post.recent.pluck(:title)).to eq ['新しい投稿', '古い投稿']
-  #   end
-  # end
 end
