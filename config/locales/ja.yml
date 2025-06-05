@@ -23,6 +23,8 @@ ja:
             images:
               too_many: "は8枚までアップロードできます"
       messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+
 
     attributes:
       user:
@@ -37,6 +39,7 @@ ja:
         title: "タイトル"
         content: "内容"
         images: "画像"
+        body: "本文"
 
       profile:
         email: "メールアドレス"
