@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   def create
       if user_signed_in?
         @comment = current_user.comments.build(comment_params)
@@ -36,5 +38,12 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body).merge(post_id: params[:post_id])
+  end
+
+  def authenticate_user!
+    unless user_signed_in?
+      flash[:alert] = t('defaults.login_required')
+      redirect_to login_path
+    end
   end
 end
