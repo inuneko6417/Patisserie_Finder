@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to patisseries_index_path, notice: "ログインに成功しました。"
+      redirect_to patisseries_index_path, flash: { notice: t("defaults.login_success") }
     else
-      flash.now[:alert] = "メールアドレスまたはパスワードが正しくありません。"
+      flash.now[:alert] = t("defaults.login_failed")
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path, notice: "ログアウトしました。"
+    redirect_to login_path, alert: t("defaults.logout_success")
   end
 end

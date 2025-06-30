@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?, :current_user
   before_action :set_active_storage_url_options
   before_action :set_user
+  add_flash_types :success, :danger
 
   def user_signed_in?
     session[:user_id].present?

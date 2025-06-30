@@ -48,24 +48,6 @@
               </ul>
             </li>
 
-            <!-- ログインメニュー -->
-            <li class="relative group">
-              <%= link_to 'ログイン', '#', class: "text-white hover:text-gray-200 font-medium inline-block" %>
-              <!-- ドロップダウンメニュー -->
-              <ul
-                class="absolute left-0 hidden group-hover:block bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48"
-              >
-                <!-- 掲示板一覧 -->
-                <li>
-                  <%= link_to 'ログイン', login_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
-                </li>
-                <!-- 掲示板作成 -->
-                <li>
-                  <%= link_to '新規登録', signup_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
-                </li>
-              </ul>
-            </li>
-
             <!-- プロフィールメニュー -->
             <li class="relative">
               <%= link_to '#', class: "flex items-center text-white hover:text-gray-200", id: "profile-link" do %>

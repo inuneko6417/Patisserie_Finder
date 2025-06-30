@@ -25,15 +25,7 @@
     <% end %>
 
     <!-- Flash メッセージ -->
-    <% if flash[:success] %>
-      <div class="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
-        <%= flash[:success] %>
-      </div>
-    <% elsif flash[:error] %>
-      <div class="p-4 mb-4 text-red-800 bg-red-200 rounded-lg">
-        <%= flash[:error] %>
-      </div>
-    <% end %>
+    <%= render 'shared/flash_message' %>
 
     <%= yield %>
     <footer class="bg-gray-100 border-t mt-12 py-4 text-center text-sm text-gray-500">

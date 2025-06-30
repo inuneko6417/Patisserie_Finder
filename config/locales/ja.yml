@@ -9,6 +9,12 @@ ja:
   defaults:
     edit: "編集"
     delete_confirm: "本当に削除しますか？"
+    login_success: "ログインしました"
+    login_failed: "メールアドレスまたはパスワードが正しくありません。"
+    logout_success: "ログアウトしました。"
+    comment_create_success: "コメントを投稿しました"
+    comment_create_failed: "コメントの投稿に失敗しました"
+    login_required: "ログインが必要です"
   profiles:
     show:
       title: "プロフィール"
