@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, only: [ :create, :destroy ]
 
   def create
       if user_signed_in?
@@ -7,18 +7,18 @@ class CommentsController < ApplicationController
         respond_to do |format|
           if @comment.save
             format.turbo_stream
-            format.html { redirect_to post_path(@comment.post), notice: t('defaults.comment_create_success') }
+            format.html { redirect_to post_path(@comment.post), notice: t("defaults.comment_create_success") }
           else
             format.turbo_stream
-            format.html { redirect_to post_path(@comment.post), alert: t('defaults.comment_create_failed') }
+            format.html { redirect_to post_path(@comment.post), alert: t("defaults.comment_create_failed") }
           end
         end
       else
         @comment = Comment.new # 空のコメントをセット
-        flash.now[:alert] = t('defaults.login_required')
+        flash.now[:alert] = t("defaults.login_required")
         respond_to do |format|
           format.turbo_stream { render turbo_stream: turbo_stream.replace("comment-form", partial: "comments/form", locals: { comment: @comment, post: Post.find(params[:post_id]) }) }
-          format.html { redirect_to login_path, alert: t('defaults.login_required') }
+          format.html { redirect_to login_path, alert: t("defaults.login_required") }
         end
       end
     end
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
 
   def authenticate_user!
     unless user_signed_in?
-      flash[:alert] = t('defaults.login_required')
+      flash[:alert] = t("defaults.login_required")
       redirect_to login_path
     end
   end
