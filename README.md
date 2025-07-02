@@ -238,7 +238,7 @@ Figma：https://www.figma.com/design/kMfMUm05r6O9fNpAqq9QCk/%E7%84%A1%E9%A1%8C?n
 https://github.com/users/inuneko6417/projects/1/views/2?sumFields=%5B156244715%5D&hideItemsCount=false
 ■MVPリリースまで
 - [x] rails new
-- [x] Herokuにデプロイ
+- [x] Renderにデプロイ
 - [x] トップページ
 - [x] ユーザー登録機能
 - [x] ログイン機能
