@@ -15,6 +15,9 @@ ja:
     comment_create_success: "コメントを投稿しました"
     comment_create_failed: "コメントの投稿に失敗しました"
     login_required: "ログインが必要です"
+    message:
+      updated: "更新しました"
+      not_updated: "更新に失敗しました"
   profiles:
     show:
       title: "プロフィール"

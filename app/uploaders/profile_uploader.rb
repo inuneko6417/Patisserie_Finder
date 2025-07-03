@@ -4,8 +4,8 @@ class ProfileUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  storage :fog
+  # storage :file
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
