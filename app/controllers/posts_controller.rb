@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
@@ -74,5 +75,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :user_id, images: [])
+  end
+
+  def authenticate_user!
+    unless user_signed_in?
+      redirect_to signup_path, alert: "掲示板作成には新規登録が必要です"
+    end
   end
 end
