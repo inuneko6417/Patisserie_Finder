@@ -26,7 +26,7 @@
             </li>
             <!-- 掲示板メニュー -->
             <li class="relative group">
-              <%= link_to '掲示板⬇︎', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "board-link" %>
+              <%= link_to '掲示板', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "board-link" %>
               <!-- ドロップダウンメニュー -->
               <ul id="board-dropdown" class="absolute left-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
                 <!-- 掲示板一覧 -->
@@ -39,12 +39,15 @@
                 <li>
                   <%= link_to '掲示板一覧', posts_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
                 </li>
+                <li>
+                  <%= link_to '掲示板作成', new_post_path, class: "block px-6 py-3 hover:bg-gray-100 hover:text-gray-900" %>
+                </li>
               </ul>
             </li>
 
             <!-- ログインメニュー -->
             <li class="relative group">
-              <%= link_to 'ログイン⬇︎', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "login-link" %>
+              <%= link_to 'ログイン', '#', class: "text-white hover:text-gray-200 font-medium inline-block", id: "login-link" %>
               <!-- ドロップダウンメニュー -->
               <ul id="login-dropdown" class="absolute left-0 hidden bg-white text-gray-700 border border-gray-200 rounded shadow-lg mt-2 w-48">
                 <li>
