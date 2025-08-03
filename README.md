@@ -272,7 +272,7 @@ https://github.com/users/inuneko6417/projects/1/views/2?sumFields=%5B156244715%5
 
 READMEレビュー時に実装予定だった機能が実装できているかがわかるように記載してください。
 - [x] rails new
-- [x] Herokuにデプロイ
+- [x] Renderにデプロイ
 - [x] トップページ
 - [x] ユーザー登録機能
 - [x] ログイン機能
