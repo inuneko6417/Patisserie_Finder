@@ -75,7 +75,7 @@ gem "bootsnap", require: false
 # =====================
 # Optional / Commented Out
 # =====================
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 # gem "kredis"
 # gem "tailwindcss-rails", "~> 3.1"
 # gem "bootstrap", "~> 5.3.0"
