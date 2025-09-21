@@ -1,6 +1,10 @@
 # Patisserie_Finder
 # 地域のおすすめなパティスリーをよりよくするアプリ
 
+## 各種情報
+サービス名：Patisserie_Finder
+サービスURL：https://patisserie-finder.onrender.com
+
 ## サービス概要
 地域のケーキ屋に特化したレビュー・情報共有アプリです。
 ユーザーはおすすめのお店やスイーツを投稿し、写真や感想を共有できます。
@@ -72,10 +76,7 @@ Figma：https://www.figma.com/design/kMfMUm05r6O9fNpAqq9QCk/%E7%84%A1%E9%A1%8C?n
 ■ProjectsのURL
 https://github.com/users/inuneko6417/projects/1/views/2?sumFields=%5B156244715%5D&hideItemsCount=false
 
-## 各種情報
-サービスの概要とMVPで検証する事柄：
-サービス名：Patisserie_Finder
-サービスURL：https://patisserie-finder.onrender.com
+
 ## サービスイメージがわかるようなスクリーンショット等
 
 ![alt text](<スクリーンショット 2025-01-20 18.03.42.png>)
