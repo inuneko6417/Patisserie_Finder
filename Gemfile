@@ -37,7 +37,7 @@ gem "ransack"                                      # 検索機能
 gem "kaminari"                                     # ページネーション
 gem "image_processing"                             # 画像処理（Active Storage用）
 gem "carrierwave"                                  # アップローダー
-gem "mini_magick", "~> 4.13"                       # 画像処理（MiniMagick）
+gem "mini_magick", "~> 5.3"                        # 画像処理（MiniMagick）
 gem "draper"                                       # デコレータ
 gem "faker"                                        # ダミーデータ生成
 gem "meta-tags"                                    # SEO対策
