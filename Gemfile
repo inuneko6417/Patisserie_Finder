@@ -6,7 +6,7 @@ ruby "3.3.6" # Rubyのバージョンを固定する場合はここに記述
 # Rails & Core Components
 # =======================
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
-# gem "pg", "~> 1.1"                          # PostgreSQL
+gem "pg", "~> 1.1"                          # PostgreSQL
 gem "puma", ">= 5.0"                        # Webサーバー
 gem "sprockets-rails"                      # Asset Pipeline
 
@@ -82,7 +82,3 @@ gem "bootsnap", require: false
 # gem "autoprefixer-rails"
 # gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
-
-group :production do
-  gem 'pg'
-end

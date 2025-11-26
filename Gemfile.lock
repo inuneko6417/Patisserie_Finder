@@ -461,7 +461,7 @@ DEPENDENCIES
   kaminari
   meta-tags
   mini_magick (~> 4.13)
-  pg
+  pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.2.2, >= 7.2.2.1)
   rails-i18n
